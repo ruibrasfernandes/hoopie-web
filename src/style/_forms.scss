@@ -1,0 +1,53 @@
+/**************************/
+/* Form Styles
+/**************************/
+
+::placeholder {
+    color: color(gray-dark);
+    opacity: 1; /* Firefox */
+}
+  
+::-ms-input-placeholder { /* Edge 12 -18 */
+    color: color(gray-dark);
+}
+
+textarea {
+    height:100px;
+}
+
+.error {
+    color:red;
+}
+
+.complex-fieldset {
+    display:grid;
+    grid-template-columns:1fr 30px;
+    grid-template-areas:"label icon"
+                        "input icon";
+    align-items:center;
+    column-gap:space(s);
+    row-gap:space(xxxs);
+
+    border:1px solid color(gray-dark);
+    border-radius:border(element);
+    padding:space(sm);
+
+    label {
+        grid-area:label;
+        font-size:font-size(s);
+    }
+
+    input {
+        grid-area:input;
+        color:color(brand-blue);
+        padding:0;
+        height:30px;
+        margin-bottom:-4px;
+    }
+
+    i {
+        grid-area:icon;
+        justify-self:center;
+        text-align:center;
+    }
+}

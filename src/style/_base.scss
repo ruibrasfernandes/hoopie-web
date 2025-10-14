@@ -1,0 +1,89 @@
+html.js {
+    opacity:0;
+    overflow-x:hidden;
+}
+
+* {
+	box-sizing:border-box;
+    text-rendering: geometricPrecision;
+    font-synthesis: none;
+    hyphens: none;
+}
+
+body {
+    position:relative;
+    z-index:1;
+    @include body-font;
+    overflow-x:hidden;
+    width:100%;
+}
+
+::selection {
+    background:color(brand-blue);
+    color:color(black);
+}
+
+/**************************/
+/* Font Styles            
+/**************************/
+
+h2, h3, h4, h5, h6 {line-height:1.15;font-weight:300}
+
+h1 {font-size: font-size(xxxl)}
+h2 {font-size: font-size(xxl)}
+h3 {font-size: font-size(xl)}
+h4 {font-size: font-size(l)}
+h5 {font-size: font-size(ml)}
+h6 {font-size: font-size(s)}
+
+p {font-size:font-size(m); font-weight:300; line-height:1.3}
+
+/**************************/
+/* List Styles  
+/**************************/
+
+ul, ol {
+    line-height:1.35;
+
+    &.bullet-list {
+        list-style-type:disc;
+        list-style-position: outside;
+        padding-left:1.75ch;
+        
+        li {margin-left:0}
+    }
+}
+
+/**************************/
+/* Section Styles            
+/**************************/
+
+@mixin container {
+    box-sizing:border-box;
+    position:relative;
+    width:100%;
+    margin:0 auto;
+}
+
+$container-padding: 7vw;
+$max-width-container-padding: 85px;
+
+@each $sizing, $max-width in $content-max-widths {
+    .container-#{$sizing} {
+        @include container;
+        max-width: $max-width;
+        &:not(.p-0) {
+            padding-left: $max-width-container-padding;
+            padding-right: $max-width-container-padding;
+        }
+    }
+}
+
+.container {
+    @include container;
+    gap:space(m);
+
+    &:not(.p-0) {
+        padding:0 $container-padding;
+    }
+}

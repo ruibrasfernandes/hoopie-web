@@ -1,0 +1,372 @@
+// /**************************/
+// /* Standard and Custom Modal
+// /**************************/
+
+.p-component-overlay-enter {
+    animation:unset;
+}
+
+.p-component-overlay {
+    &:has(#voice-settings) {
+        justify-content:flex-end!important;
+        align-items:flex-start!important;
+        padding-top:space(xxl);
+        padding-right:space(l);
+    }
+}
+
+.p-dialog {
+    &-header {
+        border-top-left-radius:border(element);
+        border-top-right-radius:border(element);
+        background:color(gray-darkest);
+        padding:space(m) space(ml);
+    }
+    &-content {
+        background:color(gray-darkest);
+        padding:space(s) space(ml);
+    }
+    &-footer {
+        border-bottom-left-radius:border(element);
+        border-bottom-right-radius:border(element);
+        background:color(gray-darkest);
+        padding:space(m) space(ml);
+    }
+
+    &-title {
+        font-size:font-size(xl);
+        font-weight:normal;
+    }
+
+    &#voice-settings {
+        .p-dialog-header {
+            display:none;
+        }
+        .p-dialog-content {
+            padding-top:space(l);
+            border-top-left-radius:border(element);
+            border-top-right-radius:border(element);
+            display:flex;
+            align-items:flex-start;
+            gap:space(m);
+
+            fieldset {
+                min-width:60px;
+                display:flex;
+                flex-direction:column;
+                align-items:center;
+                gap:space(s);
+
+                label {
+                    display:flex;
+                    align-items:center;
+                    gap:space(xxxs);
+                    font-size:font-size(m);
+                    small {
+                        font-size:font-size(xs);
+                    }
+                }
+
+                i {
+                    font-size:font-size(xl,1.1);
+                }
+            }
+        }
+    }
+}
+
+.p-slider-vertical {
+    margin-top:space(xs);
+    .p-slider-handle {
+        transform:translateX(-50%);
+    }
+}
+
+// // .btn-close-modal {
+// //     cursor:pointer;
+// //     width:50px;
+// //     height:50px;
+// // 	display:flex;
+// // 	align-items:center;
+// // 	justify-content:center;
+
+// // 	position:absolute;
+// // 	z-index:2;
+// // 	right:4px;
+// // 	top:4px;
+
+// // 	svg {
+// // 		fill:none;
+// // 		stroke:color(white);
+// // 		stroke-width:1.5;
+// // 		width:24px;
+// // 		height:auto;
+// // 		transition:transition(standard);
+// // 	}
+
+// //     &:hover {
+// //         svg {
+// //             stroke:color(primary);
+// //         }
+// //     }
+
+// //     &.inverse {
+// //         svg {stroke: color(black);}
+
+// //         &:hover {
+// //             svg {stroke:color(white)}
+// //         }
+// //     }
+// // }
+
+// .standard-modal-box-dimmer,
+// #fullpage-dimmer {
+// 	position:fixed;
+// 	display:none;
+// 	z-index:999999;
+// 	width:100%;
+// 	height:100vh;
+// 	top:0;right:0;left:0;
+// 	transition:all 0.5s ease 0.15s;
+// 	background:rgba(0,0,0,0);
+
+// 	&.active {
+// 		background-color:rgba(color(black),0.8);
+// 		transition:all 0.1s ease-out;
+// 	}
+// }
+
+// #fullpage-dimmer {
+// 	z-index:1000000; // Above other modals
+// }
+
+// .standard-modal-box-holder {
+// 	display:none;
+// 	z-index:999999;
+// 	width:100%;
+// 	height:100vh;
+// 	top:0;right:0;left:0;
+
+// 	&.active {
+// 		.standard-modal-box {
+// 			opacity:1;
+// 			transform:scale(1);
+// 			transition:opacity 0.3s ease 0s, transform 0.7s ease(smooth) 0s;
+// 		}
+// 	}
+
+// 	&.removing {
+// 		.standard-modal-box {
+// 			opacity:0;
+// 			transform:scale(0.85);
+// 			transition:all 0.7s ease(smooth);
+// 		}
+// 	}
+// }
+
+// .standard-modal-box {
+// 	padding:0;
+// 	position:fixed;
+// 	z-index:99;
+// 	opacity:0;
+// 	transform:scale(1.15);
+// 	transition:all 0.3s ease-out;
+// 	width:calc(100% - #{space(m,2)});
+// 	max-width:400px;
+
+//     color:color(white);
+// 	// box-shadow:0 0 80px rgba(color(primary),0.2);
+
+// 	background:linear-gradient(45deg, rgba(color(gray-darker),0.4) 0%, rgba(color(black-offset),0.7) 100%);
+// 	backdrop-filter:blur(30px);
+
+// 	overflow-y:auto;
+// 	height:auto;
+// 	max-height:calc(100vh - #{space(ml,2)});
+
+// 	// &.scrollable {
+// 	// 	overflow-y:auto;
+// 	// 	height:auto;
+// 	// 	max-height:90vh;
+// 	// }
+
+// 	&.width-ml {
+// 		max-width:450px;
+// 		.standard-modal-title:not(.text-left) {
+// 			text-align:center;
+// 		}
+// 	}
+
+// 	&.width-l {
+// 		max-width:600px;
+// 		.standard-modal-title:not(.text-left) {
+// 			text-align:center;
+// 		}
+// 	}
+
+//     // fieldset.valid input, input:focus, fieldset.valid textarea, textarea:focus {
+//     //     color:color(black);
+//     // }
+// }
+
+// .modal-component-container { // Needed to allow "ref=Modal" for react
+// 	position:absolute;
+// }
+
+// .modal-component {
+// 	@include absolute-stretch;
+// 	display:none;
+// 	align-items:center;
+// 	justify-content:center;
+
+// 	.modal-component-container & {
+// 		display:flex; // Only show modal-component when it's inside the container
+// 	}
+// }
+
+// // .standard-modal-header {
+// // 	position:relative;
+// //     display:flex;
+
+
+// // 	display:grid;
+// // 	align-items: center;
+// // 	justify-content:flex-start;
+// // 	padding:space(l);
+// // 	padding-bottom:space(l,0.7);
+
+// // 	.standard-modal-title h1 {
+// // 		line-height:1;
+// // 		display:inline;
+// // 	}
+
+// // 	.standard-modal-title .modal-subtitle {
+// // 		color:darken(color(primary),10%);
+// // 		margin-top:space(s);
+// // 	}
+// // }
+
+// // .standard-modal-content {
+// // 	padding:space(l) space(l);
+// // 	padding-top:0;
+// // 	margin-bottom:space(m);
+// // }
+
+// .modal-footer {
+// 	margin-top:space(s);
+// 	display:flex;
+// 	justify-content:flex-end;
+// 	align-items:center;
+// 	gap:space(m);
+
+// 	button[type="submit"] {
+// 		position:relative;
+
+// 		&[disabled]:after {
+// 			content:"";
+// 			position:relative;
+// 			width:10px;
+// 			height:10px;
+// 			margin-left:space(xxs);
+// 			background:color(primary);
+// 			opacity:1;
+// 			display:none;
+// 			animation:infinite-rotation 1s ease(ease) infinite;
+
+// 			@keyframes infinite-rotation {
+// 				0% {transform:rotate(0) scale(1)}
+// 				50% {transform:rotate(-180deg) scale(0.8)}
+// 				0% {transform:rotate(-360deg) scale(1)}
+// 			}
+// 		}
+// 		&[state="processing"] {
+// 			[content-for]:not([content-for="processing"]) {display:none;opacity:0}
+// 			[content-for="processing"] {opacity:1}
+
+// 			&:after {display:flex}
+// 		}
+// 		&[state="idle"] {
+// 			[content-for]:not([content-for="idle"]) {display:none;opacity:0}
+// 			[content-for="idle"] {opacity:1}
+// 		}
+// 	}
+// }
+
+
+// /**************************/
+// /* Sidebar Menu
+// /**************************/
+
+// #sidebar-menu {
+//     position: fixed;
+//     top: 0;
+//     right: 0;
+//     bottom: 0;
+// 	height:100%;
+// 	max-height:none;
+//     width:#{"min(350px,30vw)"};
+// 	background:color(white-offset);
+//     padding: space(l);
+// }
+
+// .modal-component-container:has(#sidebar-menu) {
+// 	.standard-modal-box-dimmer {
+// 		&.active {
+// 			background-color:transparent;
+// 		}
+// 	}
+
+// 	.standard-modal-box-holder {
+
+// 		.standard-modal-box, &.removing .standard-modal-box {
+// 			transform:translateX(100%);
+// 		}
+		
+// 		&.active {
+// 			.standard-modal-box {
+// 				transform:translateX(0);
+// 			}
+// 		}
+// 	}
+// }
+
+// /**************************/
+// /* Media Queries
+// /**************************/
+
+// @media screen and (max-width:550px) {
+// 	.btn-square.btn[data-button='close'] {
+// 		width:30px;
+// 		height:30px;
+// 	}
+// }
+
+// @media screen and (max-width: 450px) {
+// 	.standard-modal-header {
+// 		padding:space(ml) space(ml);
+// 		padding-bottom:0;
+// 	}
+	
+// 	.standard-modal-content {
+// 		padding:space(s) space(ml);
+// 		padding-top:0;
+// 		margin-bottom:space(s);
+// 	}
+	
+// 	.standard-modal-footer {
+// 		gap:space(xs);
+// 		padding:space(m) 0;
+// 		margin:0 space(ml);
+// 	}
+
+// 	.notification-wrapper {
+// 		right:1.875rem;
+// 		top:1.875rem;
+// 	}
+
+// 	#notification,
+// 	#success-notification,
+// 	#fail-notification {
+// 		max-width:#{"min(450px, calc(100% - 1.875rem))"};
+// 	}
+// }
