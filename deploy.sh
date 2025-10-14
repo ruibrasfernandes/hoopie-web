@@ -56,14 +56,17 @@ case $ENVIRONMENT in
     dev)
         FIREBASE_PROJECT="hoopie-dev"
         ENV_FILE=".env.dev"
+        EXPECTED_BRANCH="dev"
         ;;
     stag)
         FIREBASE_PROJECT="hoopie-stag"
         ENV_FILE=".env.stag"
+        EXPECTED_BRANCH="stag"
         ;;
     prod)
         FIREBASE_PROJECT="hoopie-prod"
         ENV_FILE=".env.prod"
+        EXPECTED_BRANCH="main"
         ;;
 esac
 
@@ -79,19 +82,19 @@ else
     print_info "Current branch: $CURRENT_BRANCH"
 
     # Validate branch matches environment
-    if [ "$CURRENT_BRANCH" != "$ENVIRONMENT" ]; then
+    if [ "$CURRENT_BRANCH" != "$EXPECTED_BRANCH" ]; then
         print_error "Branch mismatch!"
         echo ""
         echo "You are trying to deploy to ${ENVIRONMENT} environment"
         echo "But you are currently on branch: ${CURRENT_BRANCH}"
         echo ""
         echo "Please switch to the correct branch:"
-        echo "  git checkout ${ENVIRONMENT}"
+        echo "  git checkout ${EXPECTED_BRANCH}"
         echo ""
         exit 1
     fi
 
-    print_success "Branch matches environment: $CURRENT_BRANCH"
+    print_success "Branch matches environment: $CURRENT_BRANCH → $ENVIRONMENT"
 fi
 
 echo ""
