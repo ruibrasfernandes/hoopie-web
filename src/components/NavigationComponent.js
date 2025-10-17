@@ -2,6 +2,7 @@ import VoiceSettingsDialog from '../dialog/VoiceSettingsDialog';
 import KnowledgeFeederSettings from '../dialog/KnowledgeFeederSettings';
 import React, { useState } from 'react';
 import { useFirebaseAuth } from '../context/FirebaseAuthContext';
+import useProfilePicture from '../hooks/useProfilePicture';
 
 const NavigationComponent = ({
     currentPage,
@@ -14,6 +15,7 @@ const NavigationComponent = ({
     const [settingsVisible, setSettingsVisible] = useState(false);
 
     const { logout } = useFirebaseAuth();
+    const { profilePictureUrl } = useProfilePicture();
 
     const handleLogout = async () => {
         try {
@@ -31,7 +33,7 @@ const NavigationComponent = ({
                 </nav>
 
                 <div className="profile">
-                    <img src="profile-placeholder.jpg" alt="Profile" />
+                    <img src={profilePictureUrl || "profile-placeholder.jpg"} alt="Profile" />
                     <div className="profile__actions">
                         {/* <button onClick={() => setSettingsVisible(true)}>
                             <i>settings</i>

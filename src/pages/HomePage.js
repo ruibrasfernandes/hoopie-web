@@ -19,6 +19,7 @@ import VoiceSettingsDialog from '../dialog/VoiceSettingsDialog';
 import { Tooltip } from 'primereact/tooltip';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import useProfilePicture from '../hooks/useProfilePicture';
 
 const HomePage = () => {
 
@@ -59,6 +60,8 @@ const HomePage = () => {
     };
 
     const [hasMicPermissions, setHasMicPermissions] = useState(null); // null = unknown, true = granted, false = denied
+
+    const { profilePictureUrl } = useProfilePicture();
 
     // Add this near other useEffects
     useEffect(() => {
@@ -558,7 +561,7 @@ const HomePage = () => {
                                                 {/* Profile Section */}
                                                 <div className="message__profile">
                                                     {message.type === 'user' ? (
-                                                        <img src="profile-placeholder.jpg" alt="Profile" />
+                                                        <img src={profilePictureUrl || "profile-placeholder.jpg"} alt="Profile" />
                                                     ) : (
                                                         <div className="hoopie-profile"></div>
                                                     )}
