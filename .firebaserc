@@ -3,7 +3,7 @@
     "default": "hoopie-prod"
   },
   "targets": {
-    "hoopie-stag": {
+    "hoopie-prod": {
       "hosting": {
         "prod": [
           "hoopie-prod"
