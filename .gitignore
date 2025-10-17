@@ -4,6 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
+package-lock.json
 
 # testing
 /coverage
@@ -27,3 +28,7 @@ yarn-error.log*
 .env.dev
 .env.stag
 .env.prod
+
+# Firebase cache
+.firebase/
+.playwright-mcp/

@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "hoopie-prod"
-  }
+  },
+  "targets": {
+    "hoopie-stag": {
+      "hosting": {
+        "prod": [
+          "hoopie-prod"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }
