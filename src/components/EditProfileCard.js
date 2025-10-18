@@ -509,6 +509,9 @@ const EditProfileCard = ({ visible, onHide, onProfileUpdated }) => {
                             </button>
                         )}
                     </div>
+                    <div className="edit-profile-email" style={{ fontSize: '0.85em', color: '#888', marginTop: '0px', textAlign: 'center' }}>
+                        {user?.email || 'N/A'}
+                    </div>
                     <div className="edit-profile-photo-buttons">
                         <button
                             type="button"

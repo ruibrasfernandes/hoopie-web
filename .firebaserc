@@ -1,8 +1,25 @@
 {
   "projects": {
-    "default": "hoopie-prod"
+    "default": "hoopie-dev",
+    "dev": "hoopie-dev",
+    "stag": "hoopie-stag",
+    "prod": "hoopie-prod"
   },
   "targets": {
+    "hoopie-dev": {
+      "hosting": {
+        "dev": [
+          "hoopie-dev"
+        ]
+      }
+    },
+    "hoopie-stag": {
+      "hosting": {
+        "stag": [
+          "hoopie-stag"
+        ]
+      }
+    },
     "hoopie-prod": {
       "hosting": {
         "prod": [

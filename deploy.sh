@@ -159,7 +159,7 @@ fi
 # Deploy to Firebase Hosting
 print_info "Deploying to Firebase Hosting (${FIREBASE_PROJECT})..."
 firebase use "$FIREBASE_PROJECT"
-firebase deploy --only hosting
+firebase deploy --only hosting:${ENVIRONMENT}
 
 if [ $? -ne 0 ]; then
     print_error "Deployment failed!"
